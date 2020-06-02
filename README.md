@@ -4,6 +4,37 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+
+## Goals
+- [X] Docker - https://www.docker.com/products/docker-desktop
+- [X] GraalVM instalation - https://github.com/graalvm/graalvm-ce-builds/releases .
+  - Quarkus has a warning to Java 8 version. Installing Java 11.
+- [ ] Database configuration.
+- [ ] First CRUD.
+  - [ ] My Abstract Entity.
+  - [ ] PanacheRepository 
+- [ ] import.sql
+- [ ] Hibernate Envers.
+- [ ] Migrations with Flyaway.
+- [ ] Security
+  - [ ] Database Users / Roles
+  - [ ] Interceptors
+  - [ ] JWT
+- [ ] Multiples data sources.
+
+
+## Utils
+
+PostgreSQl in Docker
+
+```shell script
+docker run --ulimit memlock=-1:-1 --memory-swappiness=0 \
+           --name postgres-quarkus-hibernate -e POSTGRES_USER=hibernate \
+           -e POSTGRES_PASSWORD=hibernate -e POSTGRES_DB=hibernate_db \
+           -v ~/github/demo-back/postgresql:/var/lib/postgresql/data \
+           -p 5432:5432 postgres:12
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
