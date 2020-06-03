@@ -1,7 +1,9 @@
 package br.com.strategiccore.entities;
 
 import br.com.strategiccore.utils.Config;
+import org.hibernate.annotations.SelectBeforeUpdate;
 
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -18,6 +20,7 @@ public abstract class AbstractEntity implements Serializable {
     @Column(name = "id")
     private Long id;
 
+    @JsonbTransient
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
@@ -27,12 +30,15 @@ public abstract class AbstractEntity implements Serializable {
     @Column(name = "deleted_at", nullable = false)
     private LocalDateTime deletedAt = Config.NOT_DELETED;
 
+    @JsonbTransient
     @Column(name = "created_by", updatable = false)
     private Long createdBy;
 
+    @JsonbTransient
     @Column(name = "updated_by")
     private Long updatedBy;
 
+    @JsonbTransient
     @Column(name = "deleted_by")
     private Long deletedBy;
 
@@ -91,4 +97,13 @@ public abstract class AbstractEntity implements Serializable {
     public void setDeletedBy(Long deletedBy) {
         this.deletedBy = deletedBy;
     }
+
+//    public void merge(AbstractEntity other) {
+//        this.createdAt = other.createdAt;
+//        this.updatedAt = other.updatedAt;
+//        this.deletedAt = other.deletedAt;
+//        this.createdBy = other.createdBy;
+//        this.updatedBy = other.updatedBy;
+//        this.deletedBy = other.deletedBy;
+//    }
 }

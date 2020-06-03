@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="06eb65c5-7d56-4435-962f-7262e21d281f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/AbstractEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Endpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/utils/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/Resources/EndpointResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/AbstractRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/EndpointRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/AbstractEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Endpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Endpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
+    <list id="4379f9ef-be71-4eb7-9cc2-95916fdd4bb6" name="Creating AbstractEntity." comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -38,11 +60,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
@@ -54,12 +80,25 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="06eb65c5-7d56-4435-962f-7262e21d281f" name="Default Changelist" comment="" />
+      <changelist id="4379f9ef-be71-4eb7-9cc2-95916fdd4bb6" name="Creating AbstractEntity." comment="" />
       <created>1591128103393</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591128103393</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="188" key="#Plugins" timestamp="1591141921374">
@@ -74,30 +113,38 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="773" y="231" key="#com.intellij.ide.util.MemberChooser/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591138494348" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1591139628108">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1591228462316">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591139628108" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1591139628106">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591228462316" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1591228462314">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591139628106" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1591139628105">
+    <state width="1878" height="305" key="GridCell.Tab.0.center/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591228462314" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1591228462313">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591139628105" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1591139628107">
+    <state width="1878" height="305" key="GridCell.Tab.0.left/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591228462313" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1591228462315">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591139628107" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591228462315" />
     <state x="548" y="282" key="IDE.errors.dialog" timestamp="1591141027910">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="548" y="282" key="IDE.errors.dialog/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591141027910" />
-    <state x="469" y="179" key="SettingsEditor" timestamp="1591139579968">
+    <state x="469" y="179" key="SettingsEditor" timestamp="1591210383657">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="469" y="179" key="SettingsEditor/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591139579968" />
+    <state x="469" y="179" key="SettingsEditor/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591210383657" />
+    <state x="813" y="461" key="VCS.ChangelistChooser" timestamp="1591142767990">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="813" y="461" key="VCS.ChangelistChooser/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591142767990" />
+    <state x="683" y="439" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591227675909">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="683" y="439" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591227675909" />
     <state x="625" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1591141893793">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

@@ -104,4 +104,15 @@ public class Endpoint extends AbstractEntity {
     public void setOffline(boolean offline) {
         isOffline = offline;
     }
+
+//    public void merge(Endpoint other) {
+//        super.merge(other);
+//        this.name = other.name;
+//        this.url = other.url;
+//        this.iconName = other.iconName;
+//        this.listed = other.listed;
+//        this.isWeb = other.isWeb;
+//        this.isAndroid = other.isAndroid;
+//        this.isOffline = other.isOffline;
+//    }
 }

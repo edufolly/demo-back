@@ -10,10 +10,19 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 - [X] GraalVM instalation - https://github.com/graalvm/graalvm-ce-builds/releases .
 - [X] Database configuration.
 - [ ] First CRUD.
-  - [X] AbstractEntity.
-  - [ ] Soft delete.
-  - [ ] PanacheRepository or AbstractRepository?
-  - [ ] AbstractCrudService?
+  - [X] ~~PanacheEntity~~ or AbstractEntity.
+  - [ ] PanacheRepository and AbstractRepository.
+    - [X] POST.
+    - [X] PUT.
+    - [ ] Soft DELETE.
+    - [X] GET by ID.
+    - [ ] GET ALL.
+    - [ ] SYNC With date.
+  - [ ] AbstractResource.
+- [ ] Relationship Tests
+  - [ ] One-to-one.
+  - [ ] Many-to-one,
+  - [ ] Many-to-many.
 - [ ] import.sql
 - [ ] Hibernate Envers.
 - [ ] Basic Test Automation.
@@ -39,9 +48,38 @@ docker run --ulimit memlock=-1:-1 --memory-swappiness=0 \
 ```
 
 ## Read
+
+#### Quarkus
+- https://developers.redhat.com/courses/quarkus/
 - https://thorben-janssen.com/implement-soft-delete-hibernate/
 - https://quarkus.io/quarkus-workshops/super-heroes/
 - http://www.mastertheboss.com/soa-cloud/quarkus/managing-data-persistence-with-quarkus
+
+#### JSON-B
+- https://javaee.github.io/jsonb-spec/users-guide.html
+
+## Initial Tests
+
+#### Endpoint
+
+##### POST
+```shell script
+curl -vvv -H 'Content-Type: application/json' \
+     -X POST http://localhost:8080/endpoint \
+     -d '{"name":"test","url":"test"}'
+```
+
+##### PUT
+```shell script
+curl -vvv -H 'Content-Type: application/json' \
+     -X PUT http://localhost:8080/endpoint/1 \
+     -d '{"name":"new_test","url":"new_test","web":false}'
+```
+
+##### GET by ID
+```shell script
+curl -vvv -X GET http://localhost:8080/endpoint/1
+```
 
 ## Issues
 - OpenJDK 64-Bit Server VM warning: forcing TieredStopAtLevel to full optimization because JVMCI is enabled.
