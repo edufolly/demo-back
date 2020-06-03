@@ -8,19 +8,22 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 ## Goals
 - [X] Docker - https://www.docker.com/products/docker-desktop
 - [X] GraalVM instalation - https://github.com/graalvm/graalvm-ce-builds/releases .
-  - Quarkus has a warning to Java 8 version. Installing Java 11.
-- [ ] Database configuration.
+- [X] Database configuration.
 - [ ] First CRUD.
-  - [ ] My Abstract Entity.
-  - [ ] PanacheRepository 
+  - [X] AbstractEntity.
+  - [ ] Soft delete.
+  - [ ] PanacheRepository or AbstractRepository?
+  - [ ] AbstractCrudService?
 - [ ] import.sql
 - [ ] Hibernate Envers.
+- [ ] Basic Test Automation.
 - [ ] Migrations with Flyaway.
 - [ ] Security
   - [ ] Database Users / Roles
   - [ ] Interceptors
   - [ ] JWT
 - [ ] Multiples data sources.
+- [ ] OpenAPI Docs.
 
 
 ## Utils
@@ -34,6 +37,17 @@ docker run --ulimit memlock=-1:-1 --memory-swappiness=0 \
            -v ~/github/demo-back/postgresql:/var/lib/postgresql/data \
            -p 5432:5432 postgres:12
 ```
+
+## Read
+- https://thorben-janssen.com/implement-soft-delete-hibernate/
+- https://quarkus.io/quarkus-workshops/super-heroes/
+- http://www.mastertheboss.com/soa-cloud/quarkus/managing-data-persistence-with-quarkus
+
+## Issues
+- OpenJDK 64-Bit Server VM warning: forcing TieredStopAtLevel to full optimization because JVMCI is enabled.
+  - https://github.com/quarkusio/quarkus/issues/6175
+  - Quarkus has a warning to Java 8 version. Installing Java 11.
+  - Try to use GraalVM < 20 with Java 11
 
 ## Running the application in dev mode
 
