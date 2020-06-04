@@ -14,10 +14,11 @@ If you want to learn more about Quarkus, please visit its website: https://quark
   - [ ] PanacheRepository and AbstractRepository.
     - [X] POST.
     - [X] PUT.
-    - [ ] Soft DELETE.
+    - [X] *Soft*DELETE.
     - [X] GET by ID.
-    - [ ] GET ALL.
+    - [X] GET ALL.
     - [ ] SYNC With date.
+    - [ ] Pagination.
   - [ ] AbstractResource.
 - [ ] Relationship Tests
   - [ ] One-to-one.
@@ -51,9 +52,11 @@ docker run --ulimit memlock=-1:-1 --memory-swappiness=0 \
 
 #### Quarkus
 - https://developers.redhat.com/courses/quarkus/
-- https://thorben-janssen.com/implement-soft-delete-hibernate/
 - https://quarkus.io/quarkus-workshops/super-heroes/
 - http://www.mastertheboss.com/soa-cloud/quarkus/managing-data-persistence-with-quarkus
+- https://github.com/geoand/quarkus-test-demo/
+- https://quarkus.io/blog/insights-1/
+- https://lordofthejars.github.io/quarkus-cheat-sheet/
 
 #### JSON-B
 - https://javaee.github.io/jsonb-spec/users-guide.html
@@ -79,6 +82,16 @@ curl -vvv -H 'Content-Type: application/json' \
 ##### GET by ID
 ```shell script
 curl -vvv -X GET http://localhost:8080/endpoint/1
+```
+
+##### GET ALL
+```shell script
+curl -vvv -X GET http://localhost:8080/endpoint
+```
+
+##### DELETE
+```shell script
+curl -vvv -X DELETE http://localhost:8080/endpoint/1
 ```
 
 ## Issues

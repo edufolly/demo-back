@@ -1,4 +1,4 @@
-package br.com.strategiccore.Resources;
+package br.com.strategiccore.resources;
 
 import br.com.strategiccore.entities.Endpoint;
 import br.com.strategiccore.repositories.EndpointRepository;
@@ -41,9 +41,21 @@ public class EndpointResource {
     @Path("{id}")
     public Response get(@PathParam("id") Long id) {
         Endpoint endpoint = endpointRepository.get(id);
-        if (endpoint == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
+        return Response.ok(endpoint).build();
+    }
+
+    @GET
+    @Produces("application/json")
+    public Response getAll() {
+        return Response.ok(endpointRepository.getAll()).build();
+    }
+
+    @DELETE
+    @Transactional
+    @Produces("application/json")
+    @Path("{id}")
+    public Response delete(@PathParam("id") Long id) {
+        Endpoint endpoint = endpointRepository.delete(id, 3L);
         return Response.ok(endpoint).build();
     }
 }

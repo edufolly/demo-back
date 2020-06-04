@@ -9,7 +9,10 @@ import org.hibernate.Session;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author Eduardo Folly
@@ -53,6 +56,35 @@ public abstract class AbstractRepository<T extends AbstractEntity>
         PanacheQuery<T> query = this.find("id = ?1 and deletedAt = ?2",
                 id, Config.NOT_DELETED);
 
-        return query.firstResult();
+        T entity = query.firstResult();
+
+        if (entity == null) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+
+        return entity;
+    }
+
+    public List<T> getAll() {
+        PanacheQuery<T> query = this.find("deletedAt = ?1",
+                Config.NOT_DELETED);
+
+        return query.list();
+    }
+
+    public T delete(Long id, Long userId) {
+        int deleted = this
+                .update("deletedAt = ?1, deletedBy = ?2 where id = ?3",
+                        LocalDateTime.now(), userId, id);
+
+        if (deleted == 0) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+
+        if (deleted > 1) {
+            throw new WebApplicationException(Response.Status.NOT_MODIFIED);
+        }
+
+        return this.findById(id);
     }
 }
