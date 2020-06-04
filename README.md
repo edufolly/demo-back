@@ -9,32 +9,36 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 - [X] Docker - https://www.docker.com/products/docker-desktop
 - [X] GraalVM instalation - https://github.com/graalvm/graalvm-ce-builds/releases .
 - [X] Database configuration.
-- [ ] First CRUD.
+- [X] First CRUD.
   - [X] ~~PanacheEntity~~ or AbstractEntity.
-  - [ ] PanacheRepository and AbstractRepository.
+  - [X] PanacheRepository and AbstractRepository.
     - [X] POST.
     - [X] PUT.
     - [X] *Soft*DELETE.
     - [X] GET by ID.
     - [X] GET ALL.
     - [X] Pagination.
-    - [ ] SYNC With date.
+    - [X] SYNC With ~~date~~ timestamp.
+      - [X] /sync/count.
+      - [X] Pagination.
   - [X] AbstractResource.
+- [ ] Security
+  - [ ] Database Users / Roles - https://lordofthejars.github.io/quarkus-cheat-sheet/#_security_with_jpa
+  - [ ] Interceptors
+  - [ ] JWT
 - [ ] Relationship Tests
   - [ ] One-to-one.
   - [ ] Many-to-one,
   - [ ] Many-to-many.
 - [X] import.sql
 - [ ] Hibernate Envers.
-- [ ] Basic Test Automation.
+  - [X] Basic use.
+  - [ ] Add user information on revision.
+- [X] Basic Test Automation.
 - [ ] Migrations with Flyaway.
-- [ ] Security
-  - [ ] Database Users / Roles - https://lordofthejars.github.io/quarkus-cheat-sheet/#_security_with_jpa
-  - [ ] Interceptors
-  - [ ] JWT
 - [ ] Multiples data sources.
 - [ ] OpenAPI Docs.
-
+- [ ] Native execution.
 
 ## Utils
 
@@ -88,12 +92,24 @@ curl -vvv http://localhost:8080/endpoint/1
 ```shell script
 curl -vvv http://localhost:8080/endpoint
 
+curl -vvv http://localhost:8080/endpoint?per_page\=10
+
 curl -vvv http://localhost:8080/endpoint?page\=5\&per_page\=10
 ```
 
 ##### DELETE
 ```shell script
 curl -vvv -X DELETE http://localhost:8080/endpoint/1
+```
+
+##### SYNC COUNT
+```shell script
+curl -vvv http://localhost:8080/endpoint/sync/count?t\=0
+```
+
+##### SYNC
+```shell script
+curl -vvv http://localhost:8080/endpoint/sync\?t\=0\&page\=1\&per_page\=10
 ```
 
 ## Issues

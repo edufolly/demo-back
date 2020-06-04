@@ -5,7 +5,6 @@ import br.com.strategiccore.utils.Config;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import io.quarkus.panache.common.Page;
-import io.quarkus.panache.common.Sort;
 import org.hibernate.Session;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -13,8 +12,10 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * @author Eduardo Folly
@@ -95,5 +96,28 @@ public abstract class AbstractRepository<T extends AbstractEntity>
         }
 
         return this.findById(id);
+    }
+
+    public long syncCount(Long timestamp) {
+        if (timestamp == null) {
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+
+        LocalDateTime localDateTime = LocalDateTime
+                .ofInstant(Instant.ofEpochMilli(timestamp),
+                        TimeZone.getDefault().toZoneId());
+
+        PanacheQuery<T> query = this
+                .find("deletedAt > ?1 or updatedAt > ?1", localDateTime);
+
+        return query.count();
+    }
+
+    public List<T> sync(LocalDateTime timestamp, Integer page, Integer perPage) {
+
+        PanacheQuery<T> query = this
+                .find("deletedAt > ?1 or updatedAt > ?1", timestamp);
+
+        return query.page(Page.of(page - 1, perPage)).list();
     }
 }

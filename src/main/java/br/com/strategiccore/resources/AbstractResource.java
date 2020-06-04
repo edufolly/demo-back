@@ -2,6 +2,7 @@ package br.com.strategiccore.resources;
 
 import br.com.strategiccore.entities.AbstractEntity;
 import br.com.strategiccore.repositories.AbstractRepository;
+import br.com.strategiccore.utils.Config;
 import io.vertx.core.http.HttpServerRequest;
 
 import javax.inject.Inject;
@@ -11,6 +12,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import java.net.URI;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.util.TimeZone;
 
 /**
  * @author Eduardo Folly
@@ -61,8 +65,8 @@ public abstract class AbstractResource<
             page = 1;
         }
 
-        if (perPage < 1 || perPage > 100) {
-            perPage = 100;
+        if (perPage < 1 || perPage > Config.MAX_GET_PER_PAGE) {
+            perPage = Config.MAX_GET_PER_PAGE;
         }
 
         int pageCount = repository.pageCount(perPage);
@@ -109,5 +113,35 @@ public abstract class AbstractResource<
     public Response delete(@PathParam("id") Long id) {
         T entity = repository.delete(id, 3L);
         return Response.ok(entity).build();
+    }
+
+    @GET
+    @Path("/sync/count")
+    @Produces("text/plain")
+    public Response syncCount(@QueryParam("t") Long timestamp) {
+        return Response.ok(repository.syncCount(timestamp)).build();
+    }
+
+    @GET
+    @Path("/sync")
+    @Produces("application/json")
+    public Response sync(@QueryParam("t") Long timestamp,
+                         @QueryParam("page") Integer page,
+                         @QueryParam("per_page") Integer perPage) {
+
+        if (timestamp == null || page == null || perPage == null
+                || timestamp < 0 || page < 1 || perPage < 1
+                || perPage > Config.MAX_SYNC_PER_PAGE) {
+
+            throw new WebApplicationException(Response
+                    .Status.INTERNAL_SERVER_ERROR);
+        }
+
+        LocalDateTime localDateTime = LocalDateTime
+                .ofInstant(Instant.ofEpochMilli(timestamp),
+                        TimeZone.getDefault().toZoneId());
+
+        return Response
+                .ok(repository.sync(localDateTime, page, perPage)).build();
     }
 }

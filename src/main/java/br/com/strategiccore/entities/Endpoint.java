@@ -1,6 +1,6 @@
 package br.com.strategiccore.entities;
 
-import io.quarkus.runtime.annotations.RegisterForReflection;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,9 +12,9 @@ import javax.persistence.Table;
  */
 @SuppressWarnings("unused")
 @Entity
+@Audited
 @Table(name = "sys_endpoint",
         indexes = {@Index(columnList = "url, deleted_at", unique = true)})
-@RegisterForReflection
 public class Endpoint extends AbstractEntity {
 
     @Column(name = "name", nullable = false)
