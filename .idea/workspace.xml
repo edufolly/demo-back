@@ -20,14 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06eb65c5-7d56-4435-962f-7262e21d281f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/strategiccore/resources/EndpointResourceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/demo_back__quarkusDev_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/dev.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/AbstractResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/ExampleResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/Resources/EndpointResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/EndpointResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Endpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Endpoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/AbstractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/strategiccore/ExampleResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/EndpointResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/EndpointResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/strategiccore/resources/EndpointResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/strategiccore/resources/EndpointResourceTest.java" afterDir="false" />
     </list>
     <list id="4379f9ef-be71-4eb7-9cc2-95916fdd4bb6" name="Creating AbstractEntity." comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +79,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.4827586" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
@@ -88,7 +89,7 @@
       <recent name="br.com.strategiccore.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.dev">
+  <component name="RunManager" selected="Gradle.test">
     <configuration name="test" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -124,6 +125,9 @@
     </task>
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -153,22 +157,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="773" y="231" key="#com.intellij.ide.util.MemberChooser/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591138494348" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1591286086532">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1591297864200">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591286086532" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1591286086530">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591297864200" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1591297864198">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591286086530" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1591286086529">
+    <state width="1878" height="305" key="GridCell.Tab.0.center/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591297864198" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1591297864197">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591286086529" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1591286086531">
+    <state width="1878" height="305" key="GridCell.Tab.0.left/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591297864197" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1591297864199">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591286086531" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591297864199" />
     <state x="548" y="282" key="IDE.errors.dialog" timestamp="1591141027910">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

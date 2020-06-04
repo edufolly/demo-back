@@ -4,6 +4,8 @@ import br.com.strategiccore.entities.AbstractEntity;
 import br.com.strategiccore.utils.Config;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import io.quarkus.panache.common.Page;
+import io.quarkus.panache.common.Sort;
 import org.hibernate.Session;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -65,11 +67,18 @@ public abstract class AbstractRepository<T extends AbstractEntity>
         return entity;
     }
 
-    public List<T> getAll() {
-        PanacheQuery<T> query = this.find("deletedAt = ?1",
-                Config.NOT_DELETED);
+    public int pageCount(int perPage) {
+        PanacheQuery<T> query = this
+                .find("deletedAt = ?1", Config.NOT_DELETED);
 
-        return query.list();
+        return query.page(Page.ofSize(perPage)).pageCount();
+    }
+
+    public List<T> getAll(int page, int perPage) {
+        PanacheQuery<T> query = this
+                .find("deletedAt = ?1", Config.NOT_DELETED);
+
+        return query.page(Page.of(page - 1, perPage)).list();
     }
 
     public T delete(Long id, Long userId) {

@@ -17,19 +17,19 @@ If you want to learn more about Quarkus, please visit its website: https://quark
     - [X] *Soft*DELETE.
     - [X] GET by ID.
     - [X] GET ALL.
+    - [X] Pagination.
     - [ ] SYNC With date.
-    - [ ] Pagination.
-  - [ ] AbstractResource.
+  - [X] AbstractResource.
 - [ ] Relationship Tests
   - [ ] One-to-one.
   - [ ] Many-to-one,
   - [ ] Many-to-many.
-- [ ] import.sql
+- [X] import.sql
 - [ ] Hibernate Envers.
 - [ ] Basic Test Automation.
 - [ ] Migrations with Flyaway.
 - [ ] Security
-  - [ ] Database Users / Roles
+  - [ ] Database Users / Roles - https://lordofthejars.github.io/quarkus-cheat-sheet/#_security_with_jpa
   - [ ] Interceptors
   - [ ] JWT
 - [ ] Multiples data sources.
@@ -81,12 +81,14 @@ curl -vvv -H 'Content-Type: application/json' \
 
 ##### GET by ID
 ```shell script
-curl -vvv -X GET http://localhost:8080/endpoint/1
+curl -vvv http://localhost:8080/endpoint/1
 ```
 
 ##### GET ALL
 ```shell script
-curl -vvv -X GET http://localhost:8080/endpoint
+curl -vvv http://localhost:8080/endpoint
+
+curl -vvv http://localhost:8080/endpoint?page\=5\&per_page\=10
 ```
 
 ##### DELETE

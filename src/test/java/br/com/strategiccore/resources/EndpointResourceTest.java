@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.*;
 @TestMethodOrder(OrderAnnotation.class)
 public class EndpointResourceTest {
 
-    static final int validId = 1;
+    static final int validId = 101;
     static final Endpoint endpoint = new Endpoint();
 
     @Test
@@ -114,11 +114,24 @@ public class EndpointResourceTest {
                 .get("/endpoint")
                 .then()
                 .statusCode(200)
-                .body("$.size()", is(1));
+                .body("$.size()", is(100));
     }
 
     @Test
     @Order(7)
+    public void testEndpointGelAllPerPageSuccess() {
+        given()
+                .when()
+                .accept(ContentType.JSON)
+                .queryParam("per_page", 10)
+                .get("/endpoint")
+                .then()
+                .statusCode(200)
+                .body("$.size()", is(10));
+    }
+
+    @Test
+    @Order(8)
     public void testEndpointDeleteSuccess() {
         given()
                 .when()
@@ -131,17 +144,5 @@ public class EndpointResourceTest {
                 .and().body("name", equalTo(endpoint.getName()))
                 .and().body("url", equalTo(endpoint.getUrl()))
                 .and().body("web", equalTo(endpoint.isWeb()));
-    }
-
-    @Test
-    @Order(8)
-    public void testEndpointGelAllEmpty() {
-        given()
-                .when()
-                .accept(ContentType.JSON)
-                .get("/endpoint")
-                .then()
-                .statusCode(200)
-                .body("$.size()", is(0));
     }
 }

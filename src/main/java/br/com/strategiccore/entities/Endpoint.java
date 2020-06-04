@@ -1,5 +1,7 @@
 package br.com.strategiccore.entities;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Index;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "sys_endpoint",
         indexes = {@Index(columnList = "url, deleted_at", unique = true)})
+@RegisterForReflection
 public class Endpoint extends AbstractEntity {
 
     @Column(name = "name", nullable = false)
