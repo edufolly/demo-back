@@ -34,9 +34,9 @@ public abstract class AbstractResource<
     @Transactional
     @Consumes("application/json")
     @Produces("application/json")
-//    @Operation(summary = "Add a new entity.",
-//            description = "Add a new entity."
-//    )
+    @Operation(summary = "Add a new entity.",
+            description = "Add a new entity."
+    )
     public Response create(T entity) {
         entity = repository.add(entity, 1L);
         return Response.ok(entity).build();

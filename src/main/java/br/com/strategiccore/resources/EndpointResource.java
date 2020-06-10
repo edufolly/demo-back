@@ -11,7 +11,6 @@ import javax.ws.rs.Path;
  */
 @Path("/endpoints")
 @Tag(name = "Endpoints", description = "Endpoints Resource.")
-
 public class EndpointResource
         extends AbstractResource<EndpointRepository, Endpoint> {
 }
