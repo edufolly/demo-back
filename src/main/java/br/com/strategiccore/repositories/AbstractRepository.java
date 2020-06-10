@@ -32,6 +32,8 @@ public abstract class AbstractRepository<T extends AbstractEntity>
         entity.setCreatedBy(userId);
         entity.setUpdatedAt(LocalDateTime.now());
         entity.setUpdatedBy(userId);
+        entity.setDeletedAt(Config.NOT_DELETED);
+        entity.setDeletedBy(null);
 
         persist(entity);
 
@@ -42,6 +44,8 @@ public abstract class AbstractRepository<T extends AbstractEntity>
         newEntity.setId(id);
         newEntity.setUpdatedAt(LocalDateTime.now());
         newEntity.setUpdatedBy(userId);
+        newEntity.setDeletedAt(Config.NOT_DELETED);
+        newEntity.setDeletedBy(null);
 
         Session session = (Session) em.getDelegate();
         session.update(newEntity);

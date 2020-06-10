@@ -88,44 +88,44 @@ docker run --name keycloak-quarkus-hibernate \
 ##### POST
 ```shell script
 curl -vvv -H 'Content-Type: application/json' \
-     -X POST http://localhost:8080/endpoint \
+     -X POST http://localhost:8080/endpoints \
      -d '{"name":"test","url":"test"}'
 ```
 
 ##### PUT
 ```shell script
 curl -vvv -H 'Content-Type: application/json' \
-     -X PUT http://localhost:8080/endpoint/1 \
+     -X PUT http://localhost:8080/endpoints/1 \
      -d '{"name":"new_test","url":"new_test","web":false}'
 ```
 
 ##### GET by ID
 ```shell script
-curl -vvv http://localhost:8080/endpoint/1
+curl -vvv http://localhost:8080/endpoints/1
 ```
 
 ##### GET ALL
 ```shell script
-curl -vvv http://localhost:8080/endpoint
+curl -vvv http://localhost:8080/endpoints
 
-curl -vvv http://localhost:8080/endpoint?per_page\=10
+curl -vvv http://localhost:8080/endpoints?per_page\=10
 
-curl -vvv http://localhost:8080/endpoint?page\=5\&per_page\=10
+curl -vvv http://localhost:8080/endpoints?page\=5\&per_page\=10
 ```
 
 ##### DELETE
 ```shell script
-curl -vvv -X DELETE http://localhost:8080/endpoint/1
+curl -vvv -X DELETE http://localhost:8080/endpoints/1
 ```
 
 ##### SYNC COUNT
 ```shell script
-curl -vvv http://localhost:8080/endpoint/sync/count?t\=0
+curl -vvv http://localhost:8080/endpoints/sync/count?t\=0
 ```
 
 ##### SYNC
 ```shell script
-curl -vvv http://localhost:8080/endpoint/sync\?t\=0\&page\=1\&per_page\=10
+curl -vvv http://localhost:8080/endpoints/sync\?t\=0\&page\=1\&per_page\=10
 ```
 
 ## Issues

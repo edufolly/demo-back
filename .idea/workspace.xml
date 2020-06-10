@@ -20,11 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06eb65c5-7d56-4435-962f-7262e21d281f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/TestEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/TestResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/utils/ResourceHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/AbstractResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/AbstractResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/TestEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/AbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/AbstractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/AbstractResource.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/EndpointResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/EndpointResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/resources/TestResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/strategiccore/resources/EndpointResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/strategiccore/resources/EndpointResourceTest.java" afterDir="false" />
     </list>
     <list id="4379f9ef-be71-4eb7-9cc2-95916fdd4bb6" name="Creating AbstractEntity." comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +91,7 @@
       <recent name="br.com.strategiccore.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.dev">
+  <component name="RunManager" selected="Gradle.test">
     <configuration name="EndpointResourceTest.testEndpointSyncCountInitialSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -180,22 +184,22 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="773" y="231" key="#com.intellij.ide.util.MemberChooser/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591823220869" />
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1591823877810">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom" timestamp="1591827756568">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.bottom/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591823877810" />
-    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1591823877808">
+    <state width="1878" height="305" key="GridCell.Tab.0.bottom/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591827756568" />
+    <state width="1878" height="305" key="GridCell.Tab.0.center" timestamp="1591827756566">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.center/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591823877808" />
-    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1591823877807">
+    <state width="1878" height="305" key="GridCell.Tab.0.center/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591827756566" />
+    <state width="1878" height="305" key="GridCell.Tab.0.left" timestamp="1591827756564">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.left/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591823877807" />
-    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1591823877809">
+    <state width="1878" height="305" key="GridCell.Tab.0.left/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591827756564" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right" timestamp="1591827756567">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1878" height="305" key="GridCell.Tab.0.right/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591823877809" />
+    <state width="1878" height="305" key="GridCell.Tab.0.right/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591827756567" />
     <state x="548" y="282" key="IDE.errors.dialog" timestamp="1591141027910">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
