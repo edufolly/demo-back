@@ -2,6 +2,7 @@ package br.com.strategiccore.resources;
 
 import br.com.strategiccore.entities.Endpoint;
 import br.com.strategiccore.repositories.EndpointRepository;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Path;
@@ -9,9 +10,9 @@ import javax.ws.rs.Path;
 /**
  * @author Eduardo Folly
  */
-@Path("/endpoint")
-@RolesAllowed("endpoint")
+@Path("/endpoints")
+@Tag(name = "Endpoints", description = "Endpoints Resource.")
+
 public class EndpointResource
         extends AbstractResource<EndpointRepository, Endpoint> {
-
 }

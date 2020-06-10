@@ -4,6 +4,7 @@ import br.com.strategiccore.entities.AbstractEntity;
 import br.com.strategiccore.repositories.AbstractRepository;
 import br.com.strategiccore.utils.Config;
 import io.vertx.core.http.HttpServerRequest;
+import org.eclipse.microprofile.openapi.annotations.Operation;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -33,6 +34,9 @@ public abstract class AbstractResource<
     @Transactional
     @Consumes("application/json")
     @Produces("application/json")
+//    @Operation(summary = "Add a new entity.",
+//            description = "Add a new entity."
+//    )
     public Response create(T entity) {
         entity = repository.add(entity, 1L);
         return Response.ok(entity).build();
@@ -43,6 +47,9 @@ public abstract class AbstractResource<
     @Consumes("application/json")
     @Produces("application/json")
     @Path("{id}")
+    @Operation(summary = "Update a entity.",
+            description = "Update a entity."
+    )
     public Response update(@PathParam("id") Long id, T entity) {
         entity = repository.update(id, entity, 2L);
         return Response.ok(entity).build();
@@ -51,6 +58,10 @@ public abstract class AbstractResource<
     @GET
     @Produces("application/json")
     @Path("{id}")
+    @Operation(
+            summary = "Returns the entity by the specified id.",
+            description = "Returns the entity by the specified id."
+    )
     public Response get(@PathParam("id") Long id) {
         T entity = repository.get(id);
         return Response.ok(entity).build();
@@ -58,6 +69,10 @@ public abstract class AbstractResource<
 
     @GET
     @Produces("application/json")
+    @Operation(
+            summary = "Returns a list of entities.",
+            description = "Returns a list of entities."
+    )
     public Response getAll(@QueryParam("page") int page,
                            @QueryParam("per_page") int perPage) {
 

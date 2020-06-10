@@ -22,8 +22,12 @@ If you want to learn more about Quarkus, please visit its website: https://quark
       - [X] /sync/count.
       - [X] Pagination.
   - [X] AbstractResource.
+- [X] OpenAPI Docs.
+  - http://localhost:8080/openapi
+  - http://localhost:8080/swagger-ui
 - [ ] Security
-  - [X] Database Users / Roles - https://quarkus.io/guides/security-jpa
+  - [ ] Database Users / Roles
+  - [ ] Interceptors
   - [ ] JWT
   - [ ] Interceptors
 - [ ] Relationship Tests
@@ -37,19 +41,34 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 - [X] Basic Test Automation.
 - [ ] Migrations with Flyaway.
 - [ ] Multiples data sources.
-- [ ] OpenAPI Docs.
 - [ ] Native execution.
 
-## Utils
+## Docker Utils
 
-PostgreSQl in Docker
 
 ```shell script
+docker network create demo-back-network
+```
+
+##### PostgreSQl
+```shell script
 docker run --ulimit memlock=-1:-1 --memory-swappiness=0 \
+           --net demo-back-network \
            --name postgres-quarkus-hibernate -e POSTGRES_USER=hibernate \
            -e POSTGRES_PASSWORD=hibernate -e POSTGRES_DB=hibernate_db \
            -v ~/github/demo-back/postgresql:/var/lib/postgresql/data \
            -p 5432:5432 postgres:12
+```
+
+#### Keycloak
+```shell script
+docker run --name keycloak-quarkus-hibernate \
+           --net demo-back-network \
+           -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin \
+           -e DB_VENDOR=postgres \
+           -e DB_ADDR=postgres-quarkus-hibernate -e DB_PORT=5432 \
+           -e DB_USER=hibernate -e DB_PASSWORD=hibernate \
+           -p 8180:8080 jboss/keycloak
 ```
 
 ## Read
@@ -57,10 +76,8 @@ docker run --ulimit memlock=-1:-1 --memory-swappiness=0 \
 #### Quarkus
 - https://developers.redhat.com/courses/quarkus/
 - https://quarkus.io/quarkus-workshops/super-heroes/
-- http://www.mastertheboss.com/soa-cloud/quarkus/managing-data-persistence-with-quarkus
-- https://github.com/geoand/quarkus-test-demo/
+- Tests => https://github.com/geoand/quarkus-test-demo/ 
 - https://quarkus.io/blog/insights-1/
-- https://lordofthejars.github.io/quarkus-cheat-sheet/
 
 #### JSON-B
 - https://javaee.github.io/jsonb-spec/users-guide.html
