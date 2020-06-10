@@ -4,6 +4,7 @@ import br.com.strategiccore.entities.Endpoint;
 import br.com.strategiccore.repositories.EndpointRepository;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Path;
 
 /**

@@ -20,6 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06eb65c5-7d56-4435-962f-7262e21d281f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/utils/Startup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/AbstractEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Endpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/strategiccore/entities/Endpoint.java" afterDir="false" />
@@ -43,7 +50,32 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo-back" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo-back" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo-back" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo-back" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -74,39 +106,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.4827586" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="br.com.strategiccore.repositories" />
       <recent name="br.com.strategiccore.entities" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.dev">
-    <configuration name="EndpointResourceTest.testEndpointSyncCountInitialSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;br.com.strategiccore.resources.EndpointResourceTest.testEndpointSyncCountInitialSuccess&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -129,13 +143,7 @@
     <list>
       <item itemvalue="Gradle.dev" />
       <item itemvalue="Gradle.test" />
-      <item itemvalue="Gradle.EndpointResourceTest.testEndpointSyncCountInitialSuccess" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Gradle.EndpointResourceTest.testEndpointSyncCountInitialSuccess" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -164,6 +172,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="851" y="410" key="#Notifications" timestamp="1591723131041">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="851" y="410" key="#Notifications/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591723131041" />
     <state x="560" y="188" key="#Plugins" timestamp="1591141921374">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -176,7 +188,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="424" y="202" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591278861742" />
-    <state x="773" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1591138494348">
+    <state x="773" y="231" key="#com.intellij.ide.util.MemberChooser" timestamp="1591723124750">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="773" y="231" key="#com.intellij.ide.util.MemberChooser/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591723124750" />
+    <state x="648" y="283" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591704687762">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="773" y="231" key="#com.intellij.ide.util.MemberChooser/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591138494348" />
@@ -200,10 +216,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="548" y="282" key="IDE.errors.dialog/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591141027910" />
-    <state x="469" y="179" key="SettingsEditor" timestamp="1591210383657">
+    <state x="469" y="179" key="SettingsEditor" timestamp="1591303442070">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="469" y="179" key="SettingsEditor/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591210383657" />
+    <state x="469" y="179" key="SettingsEditor/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591303442070" />
     <state x="813" y="461" key="VCS.ChangelistChooser" timestamp="1591142767990">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -212,9 +228,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="683" y="439" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591227675909" />
-    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1591141893793">
+    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1591568598396">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591141893793" />
+    <state x="625" y="241" width="670" height="676" key="search.everywhere.popup/1920.180.1440.900/0.0.1920.1080@0.0.1920.1080" timestamp="1591568598396" />
   </component>
 </project>

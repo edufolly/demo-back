@@ -29,12 +29,13 @@ If you want to learn more about Quarkus, please visit its website: https://quark
   - [ ] Database Users / Roles
   - [ ] Interceptors
   - [ ] JWT
+  - [ ] Interceptors
 - [ ] Relationship Tests
   - [ ] One-to-one.
   - [ ] Many-to-one,
   - [ ] Many-to-many.
 - [X] import.sql
-- [ ] Hibernate Envers.
+- [ ] Hibernate Envers. - WARNING: Illegal reflective access by com.sun.xml.bind.v2.runtime.reflect.opt.Injector to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int)
   - [X] Basic use.
   - [ ] Add user information on revision.
 - [X] Basic Test Automation.
@@ -120,7 +121,7 @@ curl -vvv -X DELETE http://localhost:8080/endpoint/1
 
 ##### SYNC COUNT
 ```shell script
-curl -vvv http://localhost:8080/endpoint/sync/count?t\=0
+curl -vvv http://localhost:8080/endpoint/sync/count\?t\=0
 ```
 
 ##### SYNC
