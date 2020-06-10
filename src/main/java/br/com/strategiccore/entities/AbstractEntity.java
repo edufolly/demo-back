@@ -1,7 +1,7 @@
 package br.com.strategiccore.entities;
 
 import br.com.strategiccore.utils.Config;
-import org.hibernate.annotations.SelectBeforeUpdate;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
@@ -24,9 +24,11 @@ public abstract class AbstractEntity implements Serializable {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @Schema(hidden = true)
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt = LocalDateTime.now();
 
+    @Schema(hidden = true)
     @Column(name = "deleted_at", nullable = false)
     private LocalDateTime deletedAt = Config.NOT_DELETED;
 

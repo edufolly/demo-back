@@ -1,5 +1,6 @@
 package br.com.strategiccore.entities;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.Column;
@@ -14,7 +15,10 @@ import javax.persistence.Table;
 @Entity
 @Audited
 @Table(name = "sys_endpoint",
-        indexes = {@Index(columnList = "url, deleted_at", unique = true)})
+        indexes = {
+                @Index(columnList = "url, deleted_at", unique = true)
+        })
+@Schema(name = "Endpoint")
 public class Endpoint extends AbstractEntity {
 
     @Column(name = "name", nullable = false)
